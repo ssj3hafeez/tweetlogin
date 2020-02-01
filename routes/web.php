@@ -19,11 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Route::get('/{tweetId}', 'TweetController@show');
 
-Route::get('/', 'TweetController@show');
-Route::post('/', 'TweetController@addTweet');
-
-Route::get('/{tweetId}', 'TweetController@showTweet');
-
-Route::post('/deletePost', 'TweetController@deleteTweet');
-
+Route::post('/post', 'TweetController@show');
+Route::post('/profile', 'TweetController@CreateTweet');
+Route::post('/profile/delete', 'TweetController@deleteTweet');
+Route::post('/editpost', 'TweetController@editTweet');
